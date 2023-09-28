@@ -1,0 +1,45 @@
+name: StartBuild
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  CommonUI:
+    path: ../CommonUI/CommonUI.xcodeproj
+  Common:
+    path: ../Common/Common.xcodeproj
+  Networking:
+    path: ../Networking/Networking.xcodeproj
+
+targets:
+  StartBuildDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: StartBuild
+    scheme:
+      testTargets:
+        - StartBuildTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  StartBuild:
+    templates:
+      - framework
+    sources:
+      - StartBuild
+    dependencies:
+      - target: CommonUI/CommonUI
+      - target: Common/Common
+      - target: Networking/Networking
+    scheme:
+      testTargets:
+        - StartBuildTests
+
+  StartBuildTests:
+    templates:
+      - test
+    sources:
+      - StartBuildTests

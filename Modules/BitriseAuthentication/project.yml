@@ -1,0 +1,42 @@
+name: BitriseAuthentication
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  CommonUI:
+    path: ../CommonUI/CommonUI.xcodeproj
+  Common:
+    path: ../Common/Common.xcodeproj
+
+targets:
+  BitriseAuthenticationDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: BitriseAuthentication
+    scheme:
+      testTargets:
+        - BitriseAuthenticationTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  BitriseAuthentication:
+    templates:
+      - framework
+    sources:
+      - BitriseAuthentication
+    dependencies:
+      - target: CommonUI/CommonUI
+      - target: Common/Common
+    scheme:
+      testTargets:
+        - BitriseAuthenticationTests
+
+  BitriseAuthenticationTests:
+    templates:
+      - test
+    sources:
+      - BitriseAuthenticationTests

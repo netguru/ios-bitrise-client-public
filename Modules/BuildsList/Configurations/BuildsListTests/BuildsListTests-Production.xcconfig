@@ -1,0 +1,2 @@
+#include "BuildsListTests-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-BuildsListTests/Pods-BuildsListTests.production.xcconfig"

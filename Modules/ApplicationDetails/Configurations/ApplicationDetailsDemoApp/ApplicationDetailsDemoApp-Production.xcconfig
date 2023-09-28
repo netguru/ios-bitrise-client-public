@@ -1,0 +1,2 @@
+#include "ApplicationDetailsDemoApp-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-ApplicationDetailsDemoApp/Pods-ApplicationDetailsDemoApp.production.xcconfig"

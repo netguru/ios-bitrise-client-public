@@ -1,0 +1,49 @@
+configs:
+  Debug: debug
+  Staging: release
+  Production: release
+configFiles:
+  Debug: Configurations/Debug.xcconfig
+  Staging: Configurations/Staging.xcconfig
+  Production: Configurations/Production.xcconfig
+fileGroups:
+  - Resources
+  - Configurations
+options:
+  minimumXcodeGenVersion: 2.29.0
+
+targetTemplates:
+  common:
+    info:
+      path: "Resources/Plists/${target_name}-Info.plist"
+      properties:
+        CFBundleVersion: $(PRODUCT_BUNDLE_VERSION)
+    postCompileScripts:
+      - script: Pods/SwiftLint/swiftlint
+        name: Swiftlint
+    configFiles:
+      Debug: Configurations/${target_name}/${target_name}-Debug.xcconfig
+      Staging: Configurations/${target_name}/${target_name}-Staging.xcconfig
+      Production: Configurations/${target_name}/${target_name}-Production.xcconfig
+
+  application:
+    templates:
+      - common
+    platform: iOS
+    type: application
+    scheme:
+      gatherCoverageData: true
+
+  test:
+    templates:
+      - common
+    platform: iOS
+    type: bundle.unit-test
+    scheme:
+      gatherCoverageData: true
+
+  framework:
+    templates:
+      - common
+    platform: iOS
+    type: framework

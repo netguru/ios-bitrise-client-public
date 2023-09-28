@@ -1,0 +1,7 @@
+#include "../../../../Carthage/Checkouts/xcconfigs/Platforms/iOS.xcconfig"
+#include "../../../../Carthage/Checkouts/xcconfigs/Targets/Framework.xcconfig"
+
+_BUNDLE_IDENTIFIER = com.netguru.bitrise.startBuild
+_CODESIGN_PROFILE_SPECIFIER = // Empty by default
+_CODESIGN_DEVELOPMENT_TEAM = // Empty by default
+_CODESIGN_IDENTITY = // Empty by default

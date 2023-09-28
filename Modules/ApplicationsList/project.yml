@@ -1,0 +1,45 @@
+name: ApplicationsList
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  CommonUI:
+    path: ../CommonUI/CommonUI.xcodeproj
+  Common:
+    path: ../Common/Common.xcodeproj
+  Networking:
+    path: ../Networking/Networking.xcodeproj
+
+targets:
+  ApplicationsListDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: ApplicationsList
+    scheme:
+      testTargets:
+        - ApplicationsListTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  ApplicationsList:
+    templates:
+      - framework
+    sources:
+      - ApplicationsList
+    dependencies:
+      - target: CommonUI/CommonUI
+      - target: Common/Common
+      - target: Networking/Networking
+    scheme:
+      testTargets:
+        - ApplicationsListTests
+
+  ApplicationsListTests:
+    templates:
+      - test
+    sources:
+      - ApplicationsListTests

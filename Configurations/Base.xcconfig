@@ -1,0 +1,7 @@
+#include "../Carthage/Checkouts/xcconfigs/Common/Common.xcconfig"
+
+_COMPILER_SWIFT_VERSION = 5.5
+_BUILD_VERSION = 0.1
+_DEPLOYMENT_TARGET_IOS = 13.0
+_CODESIGN_STYLE = Manual
+_ASSET_ICON = AppIcon

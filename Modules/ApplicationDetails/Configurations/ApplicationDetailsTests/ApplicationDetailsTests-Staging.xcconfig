@@ -1,0 +1,2 @@
+#include "ApplicationDetailsTests-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-ApplicationDetailsTests/Pods-ApplicationDetailsTests.staging.xcconfig"

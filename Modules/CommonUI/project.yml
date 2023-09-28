@@ -1,0 +1,41 @@
+name: CommonUI
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  Common:
+    path: ../Common/Common.xcodeproj
+
+targets:
+  CommonUIDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: CommonUI
+    scheme:
+      testTargets:
+        - CommonUITests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  CommonUI:
+    templates:
+      - framework
+    sources:
+      - CommonUI
+      - path: README.md
+        buildPhase: none
+    dependencies:
+      - target: Common/Common
+    scheme:
+      testTargets:
+        - CommonUITests
+
+  CommonUITests:
+    templates:
+      - test
+    sources:
+      - CommonUITests

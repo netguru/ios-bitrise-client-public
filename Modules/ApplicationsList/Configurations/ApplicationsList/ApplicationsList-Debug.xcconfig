@@ -1,0 +1,2 @@
+#include "ApplicationsList-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-ApplicationsList/Pods-ApplicationsList.debug.xcconfig"

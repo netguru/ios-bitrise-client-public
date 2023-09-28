@@ -1,0 +1,2 @@
+#include "CommonUITests-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-CommonUITests/Pods-CommonUITests.debug.xcconfig"

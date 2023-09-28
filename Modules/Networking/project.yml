@@ -1,0 +1,41 @@
+name: Networking
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  Common:
+    path: ../Common/Common.xcodeproj
+
+targets:
+  NetworkingDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: Networking
+    scheme:
+      testTargets:
+        - NetworkingTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  Networking:
+    templates:
+      - framework
+    sources:
+      - path: README.md
+        buildPhase: none
+      - Networking
+    dependencies:
+      - target: Common/Common
+    scheme:
+      testTargets:
+        - NetworkingTests
+
+  NetworkingTests:
+    templates:
+      - test
+    sources:
+      - NetworkingTests

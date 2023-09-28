@@ -1,0 +1,2 @@
+#include "NetworkingDemoApp-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-NetworkingDemoApp/Pods-NetworkingDemoApp.staging.xcconfig"

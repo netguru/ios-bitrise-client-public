@@ -1,0 +1,2 @@
+#include "NetworkingTests-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.production.xcconfig"

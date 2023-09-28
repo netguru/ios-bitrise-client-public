@@ -1,0 +1,2 @@
+#include "GeneralScreensDemoApp-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-GeneralScreensDemoApp/Pods-GeneralScreensDemoApp.debug.xcconfig"

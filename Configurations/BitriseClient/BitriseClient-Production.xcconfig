@@ -1,0 +1,2 @@
+#include "BitriseClient-Base.xcconfig"
+#include "../../Pods/Target Support Files/Pods-BitriseClient/Pods-BitriseClient.production.xcconfig"

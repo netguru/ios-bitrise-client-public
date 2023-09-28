@@ -1,0 +1,42 @@
+name: GeneralScreens
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  CommonUI:
+    path: ../CommonUI/CommonUI.xcodeproj
+  Common:
+    path: ../Common/Common.xcodeproj
+
+targets:
+  GeneralScreensDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: GeneralScreens
+    scheme:
+      testTargets:
+        - GeneralScreensTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  GeneralScreens:
+    templates:
+      - framework
+    sources:
+      - GeneralScreens
+    dependencies:
+      - target: CommonUI/CommonUI
+      - target: Common/Common
+    scheme:
+      testTargets:
+        - GeneralScreensTests
+
+  GeneralScreensTests:
+    templates:
+      - test
+    sources:
+      - GeneralScreensTests

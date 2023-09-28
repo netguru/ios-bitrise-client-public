@@ -1,0 +1,45 @@
+name: BuildsList
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  CommonUI:
+    path: ../CommonUI/CommonUI.xcodeproj
+  Common:
+    path: ../Common/Common.xcodeproj
+  Networking:
+    path: ../Networking/Networking.xcodeproj
+
+targets:
+  BuildsListDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: BuildsList
+    scheme:
+      testTargets:
+        - BuildsListTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  BuildsList:
+    templates:
+      - framework
+    sources:
+      - BuildsList
+    dependencies:
+      - target: CommonUI/CommonUI
+      - target: Common/Common
+      - target: Networking/Networking
+    scheme:
+      testTargets:
+        - BuildsListTests
+
+  BuildsListTests:
+    templates:
+      - test
+    sources:
+      - BuildsListTests

@@ -1,0 +1,54 @@
+name: BitriseClient
+include:
+  - xcodegen_ng_templates.yml
+
+projectReferences:
+  ApplicationDetails:
+    path: Modules/ApplicationDetails/ApplicationDetails.xcodeproj
+  ApplicationsList:
+    path: Modules/ApplicationsList/ApplicationsList.xcodeproj
+  BitriseAuthentication:
+    path: Modules/BitriseAuthentication/BitriseAuthentication.xcodeproj
+  BuildsList:
+    path: Modules/BuildsList/BuildsList.xcodeproj
+  Common:
+    path: Modules/Common/Common.xcodeproj
+  CommonUI:
+    path: Modules/CommonUI/CommonUI.xcodeproj
+  GeneralScreens:
+    path: Modules/GeneralScreens/GeneralScreens.xcodeproj
+  Networking:
+    path: Modules/Networking/Networking.xcodeproj
+  StartBuild:
+    path: Modules/StartBuild/StartBuild.xcodeproj
+
+targets:
+  BitriseClient:
+    templates:
+      - application
+    sources:
+      - App
+    scheme:
+      testTargets:
+        - BitriseClientTests
+    dependencies:
+      - target: ApplicationDetails/ApplicationDetails
+      - target: ApplicationsList/ApplicationsList
+      - target: BitriseAuthentication/BitriseAuthentication
+      - target: BuildsList/BuildsList
+      - target: Common/Common
+      - target: CommonUI/CommonUI
+      - target: GeneralScreens/GeneralScreens
+      - target: Networking/Networking
+      - target: StartBuild/StartBuild
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  BitriseClientTests:
+    templates:
+      - test
+    sources:
+      - AppTests
+    dependencies:
+      - target: BitriseClient

@@ -1,0 +1,2 @@
+#include "BuildsList-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-BuildsList/Pods-BuildsList.debug.xcconfig"

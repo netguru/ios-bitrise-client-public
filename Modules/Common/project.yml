@@ -1,0 +1,36 @@
+name: Common
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+
+targets:
+  CommonDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: Common
+    scheme:
+      testTargets:
+        - CommonTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  Common:
+    templates:
+      - framework
+    sources:
+      - Common
+      - path: README.md
+        buildPhase: none
+    scheme:
+      testTargets:
+        - CommonTests
+
+  CommonTests:
+    templates:
+      - test
+    sources:
+      - CommonTests

@@ -1,0 +1,2 @@
+#include "Common-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-Common/Pods-Common.production.xcconfig"

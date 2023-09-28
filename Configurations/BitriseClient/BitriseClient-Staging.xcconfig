@@ -1,0 +1,5 @@
+#include "BitriseClient-Base.xcconfig"
+#include "../../Pods/Target Support Files/Pods-BitriseClient/Pods-BitriseClient.staging.xcconfig"
+
+_CODESIGN_IDENTITY = iPhone Distribution
+_CODESIGN_PROFILE_SPECIFIER = BitriseClient Staging

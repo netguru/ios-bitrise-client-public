@@ -1,0 +1,11 @@
+include:
+  - path: ../../xcodegen_ng_templates.yml
+    relativePaths: false
+
+targetTemplates:
+  common:
+    templates:
+      - framework
+    postCompileScripts:REPLACE:
+      - script: ../../Pods/SwiftLint/swiftlint
+        name: Swiftlint

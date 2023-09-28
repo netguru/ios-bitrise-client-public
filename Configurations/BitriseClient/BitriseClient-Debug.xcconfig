@@ -1,0 +1,5 @@
+#include "BitriseClient-Base.xcconfig"
+#include "../../Pods/Target Support Files/Pods-BitriseClient/Pods-BitriseClient.debug.xcconfig"
+
+_CODESIGN_IDENTITY = Apple Development
+_CODESIGN_PROFILE_SPECIFIER = BitriseClient Development

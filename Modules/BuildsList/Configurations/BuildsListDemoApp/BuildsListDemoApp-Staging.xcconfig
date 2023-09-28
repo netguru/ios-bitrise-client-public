@@ -1,0 +1,2 @@
+#include "BuildsListDemoApp-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-BuildsListDemoApp/Pods-BuildsListDemoApp.staging.xcconfig"

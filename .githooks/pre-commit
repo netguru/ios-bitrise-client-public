@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Fix for Sourcetree
+export PATH=/usr/local/bin:$PATH
+
+if [ -f "./Pods/SwiftFormat/CommandLineTool/swiftformat" ]; then
+  git diff --diff-filter=d --staged --name-only | grep -e '\(.*\).swift$' | while read line; do
+    ./Pods/SwiftFormat/CommandLineTool/swiftformat --config .swiftformat "${line}";
+    git add "$line";
+  done
+else
+  echo "warning: SwiftFormat not installed. Run `bundle exec pod install`"
+fi

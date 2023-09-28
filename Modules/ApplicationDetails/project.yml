@@ -1,0 +1,45 @@
+name: ApplicationDetails
+include:
+  - path: ../module_template.yml
+    relativePaths: false
+projectReferences:
+  CommonUI:
+    path: ../CommonUI/CommonUI.xcodeproj
+  Common:
+    path: ../Common/Common.xcodeproj
+  Networking:
+    path: ../Networking/Networking.xcodeproj
+
+targets:
+  ApplicationDetailsDemoApp:
+    templates:
+      - application
+    sources:
+      - App
+    dependencies:
+      - target: ApplicationDetails
+    scheme:
+      testTargets:
+        - ApplicationDetailsTests
+    info:
+      properties:
+        UILaunchStoryboardName: LaunchView
+
+  ApplicationDetails:
+    templates:
+      - framework
+    sources:
+      - ApplicationDetails
+    dependencies:
+      - target: CommonUI/CommonUI
+      - target: Common/Common
+      - target: Networking/Networking
+    scheme:
+      testTargets:
+        - ApplicationDetailsTests
+
+  ApplicationDetailsTests:
+    templates:
+      - test
+    sources:
+      - ApplicationDetailsTests

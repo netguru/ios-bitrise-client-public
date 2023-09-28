@@ -1,0 +1,2 @@
+#include "BitriseAuthentication-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-BitriseAuthentication/Pods-BitriseAuthentication.debug.xcconfig"

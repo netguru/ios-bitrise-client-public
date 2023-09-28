@@ -1,0 +1,2 @@
+#include "GeneralScreensTests-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-GeneralScreensTests/Pods-GeneralScreensTests.production.xcconfig"

@@ -1,0 +1,2 @@
+#include "CommonDemoApp-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-CommonDemoApp/Pods-CommonDemoApp.staging.xcconfig"

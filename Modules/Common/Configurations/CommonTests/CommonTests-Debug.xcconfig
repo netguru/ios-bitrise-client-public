@@ -1,0 +1,2 @@
+#include "CommonTests-Base.xcconfig"
+#include "../../../../Pods/Target Support Files/Pods-CommonTests/Pods-CommonTests.debug.xcconfig"
